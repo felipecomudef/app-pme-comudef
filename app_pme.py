@@ -8,7 +8,7 @@ from rapidfuzz import fuzz
 ruta_script = os.path.abspath(__file__)
 carpeta_script = os.path.dirname(ruta_script)
 ruta_csv = os.path.join(carpeta_script, "acciones_indexadas.csv")
-ruta_pdf = r"C:\Users\Felipe.Monjes\OneDrive - Corp.Mun. de Ed.Cultura y Recreación de La Florida\PME - SEP\2025\PME"
+ruta_pdf = os.path.join(carpeta_script, "pdf")  # Cambiado para usar carpeta interna "pdf"
 
 # === Cargar CSV ===
 try:
@@ -102,3 +102,4 @@ if acciones_seleccionadas:
             st.warning("⚠️ Algunos errores al procesar:")
             for err in errores:
                 st.text(f"• {err}")
+
